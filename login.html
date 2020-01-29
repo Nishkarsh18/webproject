@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<title>Login</title> 
+<meta chartset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+<style>
+body
+    {
+        padding : 0px;
+        margin: 0px;
+        font-family:sans-serif;
+        font-size-adjust: auto;
+    }
+#about
+    {
+        background-color: #87B6A7;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+span
+    {
+        height:8%;
+        width:4%;
+        position: absolute;
+        background-color:white;
+        z-index: 20;
+    }
+.animate:nth-child(3n+1)
+    {
+        background-color: black;
+        border: 2px solid white;
+    }
+.animate:nth-child(1)
+    {
+        position: absolute;
+        top:15%;
+        left:5%;
+        animation: animate 5s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(2)
+    {
+        position: absolute;
+        top:25%;
+        left:85%;
+        animation: animate 6s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(3)
+    {
+        position: absolute;
+        top:34%;
+        left:55%;
+        animation: animate 7s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(4)
+    {
+        position: absolute;
+        top:40%;
+        left:75%;
+        animation: animate 4s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(5)
+    {
+        position: absolute;
+        top:50%;
+        left:15%;
+        animation: animate 3s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(6)
+    {
+        position: absolute;
+        top:66%;
+        left:85%;
+        animation: animate 9s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(7)
+    {
+        position: absolute;
+        top:87%;
+        left:55%;
+        animation: animate 10s linear;
+        animation-iteration-count: infinite;
+    }
+.animate:nth-child(8)
+    {
+        position: absolute;
+        top:90%;
+        left:25%;
+        animation: animate 5s linear;
+        animation-iteration-count: infinite;
+    }
+@keyframes animate
+    {
+        0%
+        {
+            transform: scale(0) translateY(0) rotate(0deg);
+            opacity: 0;
+            background-color: white;
+            border-radius: 0%;
+        }
+        100%
+        {
+            transform: scale(1) translateY(-100px) rotate(60deg);
+            opacity: 0.7;
+            background-color:white;
+            border-radius:50%;
+        }
+    }
+#heading
+    {
+        color: white;
+        font-size:32px;;
+        position: absolute;
+        left:44%;
+        top:20%;
+        width:30%;
+        transition: 3s ease;
+    }
+#heading:hover
+    {
+            transform:rotateY(360deg);
+            transform: rotateX(360deg);
+    }
+#content
+    {
+        color:white;
+        font-size:25px;
+        position: relative;
+        left:40%;
+        top:30%;
+        width:50%;
+        height:70%;
+        text-align: justify;
+        overflow-y: hidden;
+        z-index: 100;
+    }
+.form1
+    {
+        background-color: #87B6A7;
+        border: none;
+        border-bottom: 2px white solid;
+        text-transform: uppercase;
+        color:white;
+        font-size: 20px;
+        font-style: italic;
+    }
+#user1
+    {
+        z-index: 2;
+    }
+#user
+    {
+        position: relative;
+        left:-240px;
+        z-index: 2;
+    }
+#user3
+    {
+        position: relative;
+        left:-240px;
+        z-index: 2;
+    }
+.form2
+    {
+        background-color: #87B6A7;
+        border:none;
+        z-index:-2;
+    }
+#home
+    {
+        position: relative;
+        top:5px;
+        left:500px;
+    }
+</style>
+    <script>
+    $(document).ready(function()
+    {
+        $("#user1").focus(function()
+                         {
+            $(this).css("border-bottom","2px blue solid");
+            
+            $("#user").animate(
+                {
+                    top:'-30px',
+                    fontSize:'15px'
+                });
+        });
+        $("#user1").blur(function()
+                         {
+             $(this).css("border-bottom","2px white solid");
+            
+        });
+        $("#user2").blur(function()
+                         {
+             $(this).css("border-bottom","2px white solid");
+            
+        });
+        $("#user2").focus(function()
+                         {
+            $(this).css("border-bottom","2px blue solid");
+            $("#user3").animate(
+                {
+                    top:'-30px',
+                    fontSize:'15px'
+                });
+        });
+    }                  
+    );
+    </script>
+</head>
+<body >
+<div id="about">   
+    <div id="heading">LOGIN</div>
+<div id="content">
+<form action="/portal" method="post">
+    <br>
+    <br>
+<input type="text" name="username" class="form1" id="user1">
+<label for="username" id="user">Username</label>
+    <br>
+    <br>
+<input type="password"  name="password" class="form1" id="user2">
+<label for="username" id="user3">Password</label>
+<br>
+<br>
+<input type="submit" value="Log In" class="form2">
+</form>
+<form action="/home">
+<input type="submit" value="Home" class="form2" id="home">
+</form>
+</div>
+<div>
+<span class="animate"></span>
+<span class="animate"></span>
+<span class="animate"></span>
+<span class="animate"></span>
+<span class="animate"></span>
+<span class="animate"></span>
+<span class="animate"></span>
+<span class="animate"></span>
+</div>
+</div>
+</body>
+</html>
